@@ -13,8 +13,8 @@ class TestInFlightEntertainment < Minitest::Test
     assert flight.two_movies_fit?
   end
 
-  def test_it_returns_false_given_the_same_movie_twice
-    flight = InFlightEntertainment.new(100, [50,50])
+  def test_it_returns_false_with_no_two_movies_fitting
+    flight = InFlightEntertainment.new(100, [23,53,62,43])
 
     refute flight.two_movies_fit?
   end

@@ -15,6 +15,7 @@
 # -Optimize for runtime over memory.
 
 
+require 'pry'
 class InFlightEntertainment
   attr_reader :flight_length, :movie_lengths
 
@@ -24,6 +25,14 @@ class InFlightEntertainment
   end
 
   def two_movies_fit? 
-    true    
+    @movie_lengths.any? do |first_length|
+      compare_with_others(first_length)
+    end
+  end
+
+  def compare_with_others(first_length)
+    @movie_lengths.any? do |second_length|
+      (first_length + second_length) == @flight_length && first_length != second_length
+    end
   end
 end
