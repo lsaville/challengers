@@ -32,7 +32,8 @@ class InFlightEntertainment
 
   def compare_with_others(first_length)
     @movie_lengths.any? do |second_length|
-      (first_length + second_length) == @flight_length && first_length != second_length
+      (first_length + second_length) == @flight_length &&
+        first_length != second_length
     end
   end
 end

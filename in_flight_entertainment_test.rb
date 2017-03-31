@@ -18,4 +18,9 @@ class TestInFlightEntertainment < Minitest::Test
 
     refute flight.two_movies_fit?
   end
+
+  def test_it_returns_true_with_many
+    flight = InFlightEntertainment.new(120, [94,32,53,26,88,394])
+    assert flight.two_movies_fit?
+  end
 end
