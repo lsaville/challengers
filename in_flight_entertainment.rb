@@ -16,7 +16,14 @@
 
 
 class InFlightEntertainment
-  def movies_on_flight(flight_length, movie_lengths)
+  attr_reader :flight_length, :movie_lengths
 
+  def initialize(flight_length, movie_lengths)
+    @flight_length = flight_length
+    @movie_lengths = movie_lengths
+  end
+
+  def two_movies_fit? 
+    true    
   end
 end
