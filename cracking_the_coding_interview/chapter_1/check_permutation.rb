@@ -69,6 +69,9 @@ def permutation(input_one, input_two)
   return true
 end
 
+# There's a bit of unecessary work being done in the case that a character not
+# in the letters array is the test_char. 
+
 puts permutation('meow', 'woem') # Same word scrambled
 puts permutation('blahdls', 'ejlfsg') # Different lengths
 puts permutation('qwert', 'asdfg') # Same length different letters

@@ -51,7 +51,7 @@ end
 # And finally a stab at recreating the java style by cracking open Array and
 # overwriting the bracket method of the Array class so it defaults to false.
 
-require_relative('../array_mimic')
+require_relative('array_mimic')
 
 def all_unique_chars?(string)
   return false if string.length > 128
