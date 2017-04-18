@@ -48,6 +48,24 @@ end
 # This solution takes into account only single word strings. If it were a sentence
 # the method would detect repeating spaces.
 
+# And finally a stab at recreating the java style by cracking open Array and
+# overwriting the bracket method of the Array class so it defaults to false.
+
+require_relative('../array_mimic')
+
+def all_unique_chars?(string)
+  return false if string.length > 128
+
+  char_set = SpecialArray.new
+  characters = string.chars
+  for char in characters
+    val = char.ord
+    return false if char_set[val]
+    char_set[val] = true
+  end
+  true
+end
+
 a = 'meow'
 b = 'mm'
 
