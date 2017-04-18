@@ -14,8 +14,6 @@
 # -Don't make your users watch the same movie twice.
 # -Optimize for runtime over memory.
 
-
-require 'pry'
 class InFlightEntertainment
   attr_reader :flight_length, :movie_lengths
 
