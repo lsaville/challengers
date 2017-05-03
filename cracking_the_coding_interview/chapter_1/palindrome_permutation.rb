@@ -11,17 +11,36 @@
 # only appear once.
 
 def pal_per(input)
+  counts = count_chars(input)
   if input.length % 2 == 0
-    even_pal_per(input)
+    even_pal_per(counts)
   else
-    odd_pal_per(input)
+    odd_pal_per(counts)
   end
 end
 
-def even_pal_per(input)
-
+def count_chars(input)
+  input.chars.reduce({}) do |counts, char|
+    if counts[char]
+      counts[char] += 1
+    else
+      counts[char] = 1
+    end
+    counts
+  end
 end
 
-def odd_pal_per(input)
-  
+def even_pal_per(counts)
+  counts.values.all? do |count|
+    count.even?
+  end
 end
+
+def odd_pal_per(counts)
+  counts.values.one? do |count|
+    count.odd?
+  end
+end
+
+puts pal_per('moewmoew')
+puts pal_per('iamnotapalindrome')

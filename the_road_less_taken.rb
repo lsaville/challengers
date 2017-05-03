@@ -2,12 +2,13 @@ require 'pry'
 
 roads = [['A','B'], ['A','C'], ['D','E'], ['C','D'], ['F','G']]
 
-islands= roads.map do |road|
-  roads.map do |test_road|
-    road.select do |city|
-      test_road.include?(city)
+get_islands(roads)
+  roads.map do |road|
+    roads.map do |test_road|
+      road.select do |city|
+        test_road.include?(city)
+      end
     end
-  end
 end
 
 binding.pry
